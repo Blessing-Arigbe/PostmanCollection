@@ -1,0 +1,2857 @@
+{
+	"info": {
+		"_postman_id": "f65441f6-722d-484e-a65b-d76e2999b3b2",
+		"name": "Merchco Admin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Ralu\",\r\n  \"middleName\": \"Mbaebi\",\r\n  \"lastName\": \"Arigbe\",\r\n  \"email\": \"raluchukwu.mbaebie@rensource.energy\",\r\n  \"roleId\": 1,\r\n  \"phoneNumber\": \"08113321112\",\r\n  \"password\": \"Research@2020\",\r\n  \"confirmPassword\": \"Research@2020\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verify email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"7185b331-c699-4cac-b9f0-7696724c6469\",\r\n  \"token\": \"Q2ZESjhCRnplOWZISFZkR3VrOFhYREp0YUVqSzI1c3pMNGhrUTJ1NE9kcy9oYUwwS2kzQmlWMk9EVWdtWndOZ21MVG44elZhMm4wb3FETWZhdGdQYk1KL3N0Uk80T3B4aFRWWFAyYlp6T2hDY3N5TzRKV2h6OVJHdGt2QWVPcmZzTHE5bUlDdEFjTm9nQlRkaFpPbE5Kb04yWXYybHlqaXNlOHUzS3djQmIwaXcwdGd5Rld0dTBZWURZUmplNWlUMkRBQTZpOEJVV2puNURhamt6NDI4amp0YTNSOUZpV2hwM29CSENkYjhmczVuSlBDQWFJU3BLeGVERmJmbFRyL0NVck5jZz09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Auth/verifyemail",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"verifyemail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"userName\": \"raluchukwu.mbaebie@rensource.energy\",\r\n  \"password\": \"Ren@12345\"\r\n}\r\n\t\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"7185b331-c699-4cac-b9f0-7696724c6469\",\r\n  \"code\": \"Q2ZESjhCRnplOWZISFZkR3VrOFhYREp0YUVnUHlLcGkxOEVRbW96M1VBaGdNd0RVL3d6bXB6SEFuVGdDSk1nNWNjd1ZUVUYxMUErdm8xd0tTTnVVaGxwNnlRRUkzcHVpM3E5NkpCSzlZTGl3QlRKRm5ycjlNZm1hUXd5Nlg3L3ArdS9Gc1hrb3FYRS9STnAwK1I2eWQ4YjlIdVRWSTNBZEpsalVDYVJwaThIYUpGbEFIWjBOR25Pb0o0MVFtUHVicGp3d0dEdkJ0YURXY3BwZzZ4SE0wVkF0bDJqdCtDYlRJd0RSRldNc2FtekYvOWFv\",\r\n  \"newPassword\": \"Ren@12345\",\r\n  \"confirmNewPassword\": \"Ren@12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Auth/resetpassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\":  \"raluchukwu.mbaebie@rensource.energy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Auth/forgotpassword",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Auth",
+								"forgotpassword"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Branch ",
+			"item": [
+				{
+					"name": "Get branch by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Branch/5ec2b3f306820a0001a43f46",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Branch",
+								"5ec2b3f306820a0001a43f46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get branch by business id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Branch/ByBusiness/5ec16d342b9e0ec1bdd7f092",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Branch",
+								"ByBusiness",
+								"5ec16d342b9e0ec1bdd7f092"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get branch by slug",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"hassan bello\",\r\n  \"businessId\": 2,\r\n  \"location\": \"lekki\",\r\n  \"openingHour\": \"8am\",\r\n  \"closingHour\": \"9pm\",\r\n  \"phoneNumber\": \"08183753762\",\r\n  \"imageUrl\": \" \"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Branch/Slug/Babyco",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Branch",
+								"Slug",
+								"Babyco"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Branch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Branch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"5eb53818d6e143461911c472\",\r\n  \"name\": \"Grand Square ikeja\",\r\n  \"businessId\": \"5eb42d4b7ee0fd1708ab88a6\",\r\n  \"location\": \"string\",\r\n  \"openingHour\": \"8 am\",\r\n  \"closingHour\": \"8 pm\",\r\n  \"phoneNumber\": \"08009299209\",\r\n  \"imageUrl\": \"string\",\r\n  \"latitude\": \"string\",\r\n  \"longitude\": \"string\",\r\n  \"address\": \"ikeja\",\r\n  \"isAvailable\": true,\r\n  \"email\": \"string\",\r\n  \"categoryId\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Branch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Branch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"businessId\": \"string\",\r\n  \"location\": \"string\",\r\n  \"openingHour\": \"string\",\r\n  \"closingHour\": \"string\",\r\n  \"phoneNumber\": \"string\",\r\n  \"imageUrl\": \"string\",\r\n  \"latitude\": \"string\",\r\n  \"longitude\": \"string\",\r\n  \"address\": \"string\",\r\n  \"isAvailable\": true,\r\n  \"email\": \"string\",\r\n  \"categoryId\": \"string\",\r\n  \"state\": \"string\",\r\n  \"listingOptions\": {\r\n    \"isOnMerchBuy\": true,\r\n    \"isOnMerchList\": true\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Branch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Branch"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Business",
+			"item": [
+				{
+					"name": "Get business",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Business",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Business"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get business by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Business/5ec3a0ae93d1be000109a0ba",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Business",
+								"5ec3a0ae93d1be000109a0ba"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Business",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Backup\",\r\n  \"imageUrl\": \"string\",\r\n  \"description\": \"Laptop\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Business",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Business"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update business",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"5ec3a0ae93d1be000109a0ba\",\n    \"name\": \"Laptop\",\n    \"imageUrl\": \"string\",\n    \"description\": \"Backup\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Business",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Business"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search Business",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Category/5ec2b8547e68fc000122ba0e",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Category",
+								"5ec2b8547e68fc000122ba0e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"kidz\",\r\n  \"description\": \"Baby product\",\r\n  \"parentId\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"5eb42e067ee0fd1708ab88af\",\r\n  \"name\": \"Gardening Tools\",\r\n  \"description\": \"Gardening Gadgets Galore!\",\r\n  \"parentId\": \"55804822812cb336b78728f9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get category by business id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Category/bybusiness/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Category",
+								"bybusiness",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category by branchslug",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Category/branch/gardening-tools",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Category",
+								"branch",
+								"gardening-tools"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create business category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessId\": \"1\",\r\n  \"categoryId\": \"5eb42e067ee0fd1708ab88af\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Category/businesscategory",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Category",
+								"businesscategory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Get order by search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Order/search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by referral code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by orderitemstatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Order/all/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"all",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by orderid/ orderitemstatus /branchid",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Order/{Id}/orderitemstatus/{orderItemStatus}/branch/{branchid}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"{Id}",
+								"orderitemstatus",
+								"{orderItemStatus}",
+								"branch",
+								"{branchid}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Order/cancel/{Id}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"cancel",
+								"{Id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update branch and business detail merchlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Order/UpdateBranchAndBusinessDetailsMerchList",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"UpdateBranchAndBusinessDetailsMerchList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order fulfilment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"orderId\": 0,\r\n  \"orderItemStatus\": 0,\r\n  \"orderCancelledReason\": 0,\r\n  \"orderItemIds\": [\r\n    0\r\n  ],\r\n  \"orderInvoice\": {\r\n    \"deliveryCharge\": 0,\r\n    \"subTotal\": 0,\r\n    \"serviceCharge\": 0,\r\n    \"total\": 0\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Order/OrderFulfilment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"OrderFulfilment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Orderid/orderstatus/ordercancellationreason",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Order/{orderId}/changestatus/{orderStatus}/{orderCancelledReason}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"{orderId}",
+								"changestatus",
+								"{orderStatus}",
+								"{orderCancelledReason}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ORDER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Audit Log",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order place by ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Order/PlacedByDetails/1555",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Order",
+								"PlacedByDetails",
+								"1555"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get role by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Role/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Role",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"TestUser1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 8,\r\n  \"name\": \"TestUser12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete role by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Role/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Role",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "Get permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Permission",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get permission by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Permission/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Permission",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Main menu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Permission",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 7,\r\n  \"name\": \"MainMenu\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Permission",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Permission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Permission/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Permission",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product?pageSize=1000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/product/5eb564a41cb45f3c8a70e9e3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product",
+								"5eb564a41cb45f3c8a70e9e3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Product/Search",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Product",
+								"Search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n  \"name\": \"string\",\r\n  \"branchId\": \"string\",\r\n  \"price\": 0,\r\n  \"quantity\": 0,\r\n  \"barCode\": \"string\",\r\n  \"costPrice\": 0,\r\n  \"description\": \"string\",\r\n  \"imageUrl\": \"string\",\r\n  \"otherimageUrls\": [\r\n    \"string\"\r\n  ],\r\n  \"slug\": \"string\",\r\n  \"isMerchBuy\": true,\r\n  \"isMerchList\": true,\r\n  \"primaryCategory\": \"string\",\r\n  \"brand\": \"string\",\r\n  \"minOrderQty\": 0,\r\n  \"weight\": 0,\r\n   \"bulkPrices\": [\r\n            {\r\n                \"moq\": 1,\r\n                \"price\": 10000.0\r\n            },\r\n            {\r\n                \"moq\": 10,\r\n                \"price\": 5000.0\r\n            },\r\n            {\r\n                \"moq\": 40,\r\n                \"price\": 450000.0\r\n            }\r\n  ]\r\n},\r\n{\r\n    \"id\": \"5ec338e4bda06a000106f110\",\r\n    \"name\": \"string\",\r\n    \"branchId\": \"string\",\r\n    \"price\": 0,\r\n    \"quantity\": 0,\r\n    \"barCode\": \"string\",\r\n    \"costPrice\": 0,\r\n    \"description\": \"string\",\r\n    \"imageUrl\": \"string\",\r\n    \"otherimageUrls\": [\r\n      \"string\"\r\n    ],\r\n    \"slug\": \"string\",\r\n    \"isMerchBuy\": true,\r\n    \"isMerchList\": true,\r\n    \"primaryCategory\": \"string\",\r\n    \"brand\": \"string\",\r\n    \"minOrderQty\": 0,\r\n    \"weight\": 0,\r\n    \"bulkPrices\": [\r\n      {\r\n        \"moq\": 0,\r\n        \"price\": 0\r\n      }\r\n    ]\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"string\",\r\n  \"name\": \"string\",\r\n  \"branchId\": \"string\",\r\n  \"price\": 0,\r\n  \"quantity\": 0,\r\n  \"barCode\": \"string\",\r\n  \"costPrice\": 0,\r\n  \"description\": \"string\",\r\n  \"imageUrl\": \"string\",\r\n  \"slug\": \"string\",\r\n  \"isMerchBuy\": true,\r\n  \"isMerchList\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by business id/branchid/categoryid Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Product/business/5eb42d4b7ee0fd1708ab88a6/branch/5eb53818d6e143461911c472/category/5ebb0bb22f430990efc7eced",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Product",
+								"business",
+								"5eb42d4b7ee0fd1708ab88a6",
+								"branch",
+								"5eb53818d6e143461911c472",
+								"category",
+								"5ebb0bb22f430990efc7eced"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by businessID and branchID Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Product/business/5eb42d4b7ee0fd1708ab88a6/branch/5eb95cf787c0ba6b65cbcc33",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Product",
+								"business",
+								"5eb42d4b7ee0fd1708ab88a6",
+								"branch",
+								"5eb95cf787c0ba6b65cbcc33"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "formFile",
+									"type": "file",
+									"src": "/C:/Users/Sony/Downloads/Indian Bazaar Product and Price List.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/Product/upload?IsOnMerchList=true&branchId=5ec259fa4ce5620001159471",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Product",
+								"upload"
+							],
+							"query": [
+								{
+									"key": "IsOnMerchList",
+									"value": "true"
+								},
+								{
+									"key": "IsOnMerchBuy",
+									"value": "True",
+									"disabled": true
+								},
+								{
+									"key": "branchId",
+									"value": "5ec259fa4ce5620001159471"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bulk update ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": \"5ec338e4bda06a000106f10f\",\r\n    \"name\": \"Vasiline Body Lotions 8oz\",\r\n    \"branchId\": \"5ec259fa4ce562000115946f\",\r\n    \"price\": 5400,\r\n    \"quantity\": 60,\r\n    \"barCode\": \"string\",\r\n    \"costPrice\": 5200,\r\n    \"description\": \"Skin Beauty\",\r\n    \"imageUrl\": \"https://res.cloudinary.com/rensourceenergy/image/upload/v1599209776/Test/w2qkrqtopdsuyv8jisms.jpg\",\r\n        \"otherimageUrl\": [\r\n            \"https://res.cloudinary.com/rensourceenergy/image/upload/v1599209776/Test/w2qkrqtopdsuyv8jisms.jpg\",\r\n            \"https://res.cloudinary.com/rensourceenergy/image/upload/v1599209777/Test/b7gqlln9ayzesjtj8bid.jpg\"\r\n    ],\r\n    \"slug\": \"Ikeja\",\r\n    \"isMerchBuy\": true,\r\n    \"isMerchList\": true,\r\n    \"primaryCategory\": \"Gardening Tools\",\r\n    \"brand\": \"skin\",\r\n    \"minOrderQty\": 30,\r\n    \"weight\": 40.5,\r\n   \"bulkPrices\": [\r\n            {\r\n                \"moq\": 1,\r\n                \"price\": 10000.0\r\n            },\r\n            {\r\n                \"moq\": 10,\r\n                \"price\": 5000.0\r\n            },\r\n            {\r\n                \"moq\": 40,\r\n                \"price\": 450000.0\r\n            }\r\n    ]\r\n  },\r\n  {\r\n    \"id\": \"5ec338e4bda06a000106f110\",\r\n    \"name\": \"Mc Vitie's Digestive Biscuits 300g\",\r\n    \"branchId\":\"5ec259fa4ce562000115946f\",\r\n    \"price\": 400,\r\n    \"quantity\": 60,\r\n    \"barCode\": \"string\",\r\n    \"costPrice\": 410,\r\n    \"description\": \"Food\",\r\n    \"imageUrl\": \"https://res.cloudinary.com/rensourceenergy/image/upload/v1599210392/Test/ckkw6spsbsaoeni6bbs8.jpg\",\r\n        \"otherimageUrl\": [\r\n            \"https://res.cloudinary.com/rensourceenergy/image/upload/v1599210392/Test/ckkw6spsbsaoeni6bbs8.jpg\",\r\n            \"https://res.cloudinary.com/rensourceenergy/image/upload/v1599210392/Test/g4se5yai8epucmb8xtq6.jpg\"\r\n    ],\r\n    \"slug\": \"Ikeja\",\r\n    \"isMerchBuy\": true,\r\n    \"isMerchList\": true,\r\n    \"primaryCategory\": \"test\",\r\n    \"brand\": \"food\",\r\n    \"minOrderQty\": 20,\r\n    \"weight\": 40.5,\r\n     \"bulkPrices\": [\r\n            {\r\n                \"moq\": 10,\r\n                \"price\": 5000.0\r\n            },\r\n            {\r\n                \"moq\": 20,\r\n                \"price\": 4800.0\r\n            }\r\n    ]\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Product/bulkupdate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Product",
+								"bulkupdate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role permission",
+			"item": [
+				{
+					"name": "Get role permission by role id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/RolePermission/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"RolePermission",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manage role permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"roleId\": 7,\r\n    \"permissionId\": 1,\r\n    \"canAdd\": true,\r\n    \"canEdit\": true,\r\n    \"canRead\": true,\r\n    \"canDelete\": true,\r\n    \"assignPermission\": true\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/RolePermission/managerolepermission",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"RolePermission",
+								"managerolepermission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seed role permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/RolePermission/SeedRolePermission",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"RolePermission",
+								"SeedRolePermission"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Seed permission",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/RolePermission/SeedPermission",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"RolePermission",
+								"SeedPermission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Merchant",
+			"item": [
+				{
+					"name": "Create marchant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"PureLife\",\r\n  \"email\": \"purelife@yopmail.com\",\r\n  \"phoneNumber\": \"08037233758\",\r\n  \"businessId\": \"5eb42d4b7ee0fd1708ab88a6\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Merchant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Merchant"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "Get menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Menu",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get menu by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Menu/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Menu",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Settings1\",\r\n  \"isParent\": true,\r\n  \"link\": \"string\",\r\n  \"icon\": \"string\",\r\n  \"permissionId\": 1,\r\n  \"parentId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Menu",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 7,\r\n  \"name\": \"Settings12\",\r\n  \"isParent\": true,\r\n  \"link\": \"string\",\r\n  \"icon\": \"string\",\r\n  \"permissionId\": 1,\r\n  \"parentId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Menu",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete menu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Menu/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Menu",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MerchDelivery",
+			"item": [
+				{
+					"name": "Get delivery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchDelivery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchDelivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get delivery by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchDelivery/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchDelivery",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create delivery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"businessName\": \"Pizza\",\r\n  \"phoneNumber\": \"08113321112\",\r\n  \"secondPhoneNumber\": \"string\",\r\n  \"email\": \"arigbe@yopmail.com\",\r\n  \"pickupAddress\": \"lekki phase 1\",\r\n  \"lga\": \"EtiOsa\",\r\n  \"secondPickupAddress\": \"string\",\r\n  \"orderValue\": 1,\r\n  \"weight\": 3,\r\n  \"pickupComment\": \"string\",\r\n  \"customerName\": \"Arigbe Blessing\",\r\n  \"customerPhoneNumber\": \"08037233757\",\r\n  \"customerSecondPhoneNumber\": \"string\",\r\n  \"customerLga\": \"EtiOsa1\",\r\n  \"customerAddress\": \"Lekki\",\r\n  \"customerAddressLandmark\": \"string\",\r\n  \"deliveryComment\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/MerchDelivery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchDelivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update delivery",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": 1,\r\n  \r\n            \"businessName\": \"Hassan13\",\r\n            \"phoneNumber\": \"08183753762\",\r\n            \"secondPhoneNumber\": \"08183753762\",\r\n            \"email\": \"jjkjfdf\",\r\n            \"pickupAddress\": \"nkjsksjd\",\r\n            \"lga\": \"Badagry\",\r\n            \"secondPickupAddress\": \"jknkfjdnfj\",\r\n            \"orderValue\": 200.0,\r\n            \"weight\": 2.0,\r\n            \"pickupComment\": \"kjdfkdfdkfndf\",\r\n            \"customerName\": \"sam\",\r\n            \"customerPhoneNumber\": \"08183753762\",\r\n            \"customerSecondPhoneNumber\": \"08183753762\",\r\n            \"customerLga\": \"Amuwo-Odofin\",\r\n            \"customerAddress\": \"skdjskd\",\r\n            \"customerAddressLandmark\": \"skjdksd\",\r\n            \"deliveryComment\": \"jjkjfdf\"\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/MerchDelivery",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchDelivery"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete delivery",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchDelivery?Id=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchDelivery"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MerchListService",
+			"item": [
+				{
+					"name": "Get merchlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchListService?pageSize=1000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchListService"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Merchlist by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchListService/569",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchListService",
+								"569"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get merchlist by service category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchListService/bycategory/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchListService",
+								"bycategory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get merchlist by service category and sub category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchListService/2/bycategory/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchListService",
+								"2",
+								"bycategory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get merchlist by search description",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/MerchListService/?searchString=Pick up&pageSize=1000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchListService",
+								""
+							],
+							"query": [
+								{
+									"key": "searchString",
+									"value": "Pick up"
+								},
+								{
+									"key": "pageSize",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload merchlist by service category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "formFile",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/MerchListService/upload/{servicecategoryid}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchListService",
+								"upload",
+								"{servicecategoryid}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create merchlistservice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"state\": \"Lagos\",\r\n  \"localGovernment\": \"EtiOsa1\",\r\n  \"city\": \"lagos\",\r\n  \"name\": \"Pizza\",\r\n  \"address\": \"lekki\",\r\n  \"openingHours\": \"8 am\",\r\n  \"closingHours\": \"8 pm\",\r\n  \"description\": \"pizza food\",\r\n  \"deliveryOption\": \"Pickup\",\r\n  \"phoneNumber\": \"08037233757\",\r\n  \"link\": \"string\",\r\n  \"category\": 1,\r\n  \"subCategory\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/MerchListService",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"MerchListService"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "Get settings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Setting",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Setting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create checkout fee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Blessing\",\r\n  \"data\": {\r\n    \"deliveryFee\": 500,\r\n    \"isFreeDelivery\": true,\r\n    \"deliveryFeeCap\": 0,\r\n    \"serviceCharge\": 0,\r\n    \"serviceChargeCap\": 0\r\n  },\r\n  \"settingType\": 1,\r\n  \"merchApplicationType\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Setting/createcheckoutfee",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Setting",
+								"createcheckoutfee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update checkout fee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"string\",\r\n  \"data\": {\r\n    \"deliveryFee\": 0,\r\n    \"isFreeDelivery\": true,\r\n    \"deliveryFeeCap\": 0,\r\n    \"serviceCharge\": 0,\r\n    \"serviceChargeCap\": 0\r\n  },\r\n  \"settingType\": 1,\r\n  \"merchApplicationType\": 1\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Setting/updatecheckoutfee",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Setting",
+								"updatecheckoutfee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"isActive\": true,\r\n  \"emailConfirmed\": true,\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"phoneNumber\": \"string\",\r\n  \"emailAddress\": \"string\",\r\n  \"roleName\": \"string\",\r\n  \"roleId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/User",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"User"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settlement",
+			"item": [
+				{
+					"name": "Create settlement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get Dashboard OrdersMonthOnMonth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/DashBoard/OrdersMonthOnMonth",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"DashBoard",
+								"OrdersMonthOnMonth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dashboard notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/DashBoard/notifications",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"DashBoard",
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dashboard Counts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/DashBoard/Counts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"DashBoard",
+								"Counts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BackofficeEmailNotification",
+			"item": [
+				{
+					"name": "Create BackofficeEmailNotification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"location\": \"string\",\r\n  \"type\": 1,\r\n  \"emails\": [\r\n    \"string\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/BackofficeEmailNotification",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"BackofficeEmailNotification"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update ",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "create comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"Food\",\r\n  \"type\": 1,\r\n  \"entityId\":\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Comment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Comment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "orderReferralcode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Available state",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://merch-comm-admin.test.rensource.energy"
+		}
+	]
+}
